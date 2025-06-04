@@ -19,6 +19,9 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar stays on top */
 }
 
 .navbar .ul {

@@ -5,6 +5,7 @@ import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
     const cart = useSelector(state => state.cart.items);
+    const isCartEmpty = cart.length === 0; // Check if the cart is empty
     const dispatch = useDispatch();
 
     // Calculate total amount for all products in the cart
@@ -72,7 +73,7 @@ const CartItem = ({ onContinueShopping }) => {
             <div className="continue_shopping_btn">
                 <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
                 <br />
-                <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)} >Checkout</button>
+                <button className="get-started-button1" disabled={isCartEmpty} onClick={(e) => handleCheckoutShopping(e)} >Checkout</button>
             </div>
         </div>
     );
