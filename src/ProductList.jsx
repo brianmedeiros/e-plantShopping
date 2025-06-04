@@ -260,7 +260,7 @@ function ProductList({ onHomeClick }) {
 
     const handleAddToCard = (product) => {
         dispatchEvent(addItem(product));
-        setAddedToCart((prevItems) => ({...prevItems, [product.name]:true,}));
+        setAddedToCart((prevItems) => ({...prevItems, [product.name]:true,})); //Set name to true to show the added to cart message
     };
 
     return (
